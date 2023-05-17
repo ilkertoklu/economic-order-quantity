@@ -15,7 +15,7 @@ This program calculates the Economic Order Quantity (EOQ) and optimum order quan
 4. Run the following command:
 
    ```shell
-   python eoq_calculator.py
+   python3 main.py
 5. The EOQ Calculator window will appear.
 
 ## Usage
