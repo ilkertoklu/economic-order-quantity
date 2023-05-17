@@ -78,7 +78,7 @@ def get_stock_data(stock_number):
     save_button = tk.Button(top, text="Kaydet", command=save_data)
     save_button.pack()
 
-    top.wait_window()  # Wait for the top-level window to be closed
+    top.wait_window()
     return stock_data
 
 def get_table_data(row_count):
@@ -102,11 +102,10 @@ def handle_submit():
             calculator = EOQ(table_data, total_stock_area)
             result_lambda = calculator.find_optimum_lambda()
 
-            # Calculate optimum order quantity for each row
             optimum_quantities = []
             for row in table_data:
                 optimum_quantity = calculator.calculate_optimum_order_quantity(row, result_lambda)
-                optimum_quantity = round(optimum_quantity, 2)  # Round to two decimal places
+                optimum_quantity = round(optimum_quantity, 2)
                 optimum_quantities.append(optimum_quantity)
 
             result_label.config(text=f"Optimum Lambda: {result_lambda:.3f}\nOptimum Order Quantities:\n{format_optimum_quantities(optimum_quantities)}")
